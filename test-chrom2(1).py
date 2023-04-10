@@ -1,0 +1,32 @@
+import time
+
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+
+driver = webdriver.Chrome(executable_path='C:\\Users\\Msi\\PycharmProjects\\pythonProject-Selenium\\chromedriver.exe')
+driver.get("https://www.livejournal.com/login.bml")
+driver.maximize_window()
+username = driver.find_element(By.ID,"user")
+username.send_keys("Abbbooa")
+password = driver.find_element(By.ID,"lj_loginwidget_password")
+password.send_keys("abba335335ASB")
+botton_login = driver.find_element(By.NAME,'action:login')
+botton_login.click()
+driver.implicitly_wait(10)
+botton_login = driver.find_element(By.XPATH,'//*[@id="js"]/body/div[2]/header/div/nav[2]/ul/li[4]/a')
+botton_login.click()
+post_place = driver.find_element(By.XPATH,'//*[@id="content"]/div/div/div[2]/textarea')
+post_place.send_keys("One potato, two potatoes, three potatoes, four. Five potatoes, six potatoes, seven potatoes, more!")
+driver.implicitly_wait(15)
+post_place.click()
+driver.implicitly_wait(15)
+post_place = driver.find_element(By.XPATH,'//*[@id="editorWrapper"]/div[1]/div[2]/div/div/div[2]/div')
+post_place.send_keys("One potato, two potatoes, three potatoes, four. Five potatoes, six potatoes, seven potatoes, more!")
+post_place.click()
+botton_post = driver.find_element(By.XPATH,'/html/body/div[5]/footer/div/div/div[2]/div[2]/button')
+botton_post.click()
+driver.implicitly_wait(15)
+window_place = driver.find_element(By.XPATH,'/html/body/div[5]/footer/div/div/div/div[2]/div/footer/div/button')
+window_place.click()
+time.sleep(11)
+driver.close()
