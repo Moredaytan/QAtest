@@ -1,2 +1,2 @@
 # QAtest
-Tests - home works and others
+Tests and somethink simular 
